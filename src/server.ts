@@ -1,8 +1,9 @@
-import Express  from "express";
+import Express, { response }  from "express";
 
 const app = Express();
-const PORT = 8000;
 
-app.listen(PORT, () => {
-    console.log(`Server is running ${PORT}`)
+app.get('/',(resquest,response) =>{
+    return response.json({message:'Server is up'});
 })
+
+app.listen(8000)
