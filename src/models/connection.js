@@ -3,12 +3,7 @@ require('dotenv').config();
 
 async function connect() {
     try {
-    const connection = await mysql.createConnection({
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE
-    });
+    const connection = await mysql.createConnection(process.env.DATABASE_URL);
     if (connection) {
     console.log('Database Connected');
     //console.log(connection);
